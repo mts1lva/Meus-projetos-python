@@ -1,0 +1,46 @@
+"""CALCULADORA UTILIZANDO A FUNÇÃO WHILE"""
+
+while True:
+    numero1 = input('Digite um número: ')
+    numero2 = input('Digite outro número: ')
+    
+    if numero1.isdigit() and numero2.isdigit():
+        numero1_int = int(numero1)
+        numero2_int = int(numero2)
+    elif not numero1.isdigit() and not numero2.isdigit():
+        print('Digite um número válido. ')
+        continue
+
+    operacao = input('Digite qual operação você deseja realizar: ')
+    operacoes_permitidas = '+-/**'
+
+    
+    if operacao == '/': 
+        resultado_divisao = int(numero1_int / numero2_int)
+        print(f'A divisão é igual a: {resultado_divisao}')
+
+    elif operacao == '+':
+        resultado_adicao = int(numero1_int + numero2_int)
+        print(f'O resultado da adição é igual a: {resultado_adicao}')   
+
+    elif operacao == '-':
+        operacao_subtracao = int(numero1_int - numero2_int)
+        print(f'O resultado da subtração é igual a: {operacao_subtracao}')
+
+    elif operacao == '*':
+        operacao_multiplicacao = int(numero1_int * numero2_int)
+        print(f'O resultado da multiplicação é igual a: {operacao_multiplicacao}')
+
+    elif operacao == '**': 
+        operacao_exponenciacao = int(numero1_int ** numero2_int)
+        print(f'O resultado da exponenciação é igual a: {operacao_exponenciacao}')
+
+    else:
+        print('Digite uma operação válida. ')
+        continue
+    
+    
+    sair = input('Você deseja sair? [S]im [N]ão: ').lower().startswith('s')
+     
+    if sair is True:
+       break
